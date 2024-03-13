@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Post from "../Post/Post";
+// import PropTypes from 'prop-types';
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
     const [bookMark, setBookMark] = useState([]);
+    const [readingTime, setReadingTime] = useState(0);
 
     const url = "data.json";
 
@@ -23,6 +25,10 @@ const Posts = () => {
         setBookMark([...bookMark, title]);
     };
 
+    const handleReadingTime = time => {
+        setReadingTime( readingTime + time)
+    }
+
     return (
         <div className="w-4/5 mx-auto flex gap-2">
             <div className="w-9/12">
@@ -31,12 +37,13 @@ const Posts = () => {
                         key={post.id}
                         post={post}
                         handleMarkRead={handleMarkRead}
+                        handleReadingTime={handleReadingTime}
                     ></Post>
                 ))}
             </div>
             <div className="w-1/4">
                 <p className="text-[18px] font-bold mb-3">
-                    Spend time on reading:
+                    Spend time on reading: {readingTime}
                 </p>
                 <div className="bg-gray-300 p-2 rounded-2xl">
                     <p className="text-[20px] font-bold">
@@ -59,5 +66,9 @@ const Posts = () => {
         </div>
     );
 };
+
+// Posts.propTypes = {
+
+// }
 
 export default Posts;

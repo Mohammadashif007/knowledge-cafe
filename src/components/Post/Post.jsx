@@ -1,8 +1,8 @@
 import { CiBookmarkCheck } from "react-icons/ci";
+import PropTypes from 'prop-types';
 
-const Post = ({ post, handleMarkRead }) => {
-
-    const { title, cover_image, author, publish_date, reading_time, tags, id } =
+const Post = ({ post, handleMarkRead, handleReadingTime }) => {
+    const { title, cover_image, author, publish_date, reading_time, tags } =
         post;
     return (
         <div className="mb-20 border-2 border-[#000000] p-3 rounded-2xl">
@@ -17,7 +17,10 @@ const Post = ({ post, handleMarkRead }) => {
                 </div>
                 <div className="flex items-center gap-5">
                     <p>{reading_time} Min</p>
-                    <CiBookmarkCheck className=" text-2xl" />
+                    <CiBookmarkCheck
+                        onClick={() => handleMarkRead(post)}
+                        className=" text-2xl cursor-pointer"
+                    />
                 </div>
             </div>
             <p className="text-4xl font-bold my-3">{title}</p>
@@ -28,9 +31,20 @@ const Post = ({ post, handleMarkRead }) => {
                     </div>
                 ))}
             </div>
-            <button onClick={() => handleMarkRead(post)} className="border-b-2 border-[#000]">Mark as Read</button>
+            <button
+                onClick={() => handleReadingTime(post.reading_time)}
+                className="border-b-2 border-[#000]"
+            >
+                Mark as Read
+            </button>
         </div>
     );
 };
+
+Post.propTypes = {
+    post: PropTypes.object.isRequired,
+    handleMarkRead: PropTypes.func.isRequired,
+    handleReadingTime: PropTypes.func.isRequired
+}
 
 export default Post;
