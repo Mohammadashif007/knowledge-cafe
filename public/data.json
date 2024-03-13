@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "title": "The Importance of Mindfulness in Daily Life",
+      "cover_image": "/src/assets/images/1.jpg",
+      "author": {
+        "name": "John Doe",
+        "image": "/src/assets/images/boy1.png"
+      },
+      "publish_date": "13 March 2024",
+      "reading_time": 10,
+      "tags": ["Mindfulness", "Wellness", "Mental Health"]
+    },
+    {
+      "id": 2,
+      "title": "Exploring the Wonders of Deep Learning",
+      "cover_image": "/src/assets/images/2.png",
+      "author": {
+        "name": "Alice Smith",
+        "image": "/src/assets/images/boy2.png"
+      },
+      "publish_date": "12 March 2024",
+      "reading_time": 15,
+      "tags": ["Artificial Intelligence", "Machine Learning", "Technology"]
+    },
+    {
+      "id": 3,
+      "title": "The Beauty of Minimalist Living",
+      "cover_image": "/src/assets/images/3.png",
+      "author": {
+        "name": "Emily Johnson",
+        "image": "/src/assets/images/girl1.jpg"
+      },
+      "publish_date": "11 March 2024",
+      "reading_time": 8,
+      "tags": ["Minimalism", "Lifestyle", "Sustainability"]
+    },
+    {
+      "id": 4,
+      "title": "A Beginner's Guide to Astrophotography",
+      "cover_image": "/src/assets/images/4.jpg",
+      "author": {
+        "name": "David Brown",
+        "image": "/src/assets/images/girl2.jpg"
+      },
+      "publish_date": "10 March 2024",
+      "reading_time": 20,
+      "tags": ["Astrophotography", "Photography", "Space"]
+    }
+  ]
