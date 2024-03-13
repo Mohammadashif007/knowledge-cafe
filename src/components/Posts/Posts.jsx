@@ -21,12 +21,18 @@ const Posts = () => {
     }, []);
 
     const handleMarkRead = (post) => {
-        const title = post.title;
-        setBookMark([...bookMark, title]);
+       
+       setBookMark([...bookMark, post])
     };
 
-    const handleReadingTime = time => {
+    const handleReadingTime = (time, id) => {
         setReadingTime( readingTime + time)
+        console.log(id);
+        // const search = bookMark.filter(x => x.id !== id)
+        // setBookMark(search)
+        console.log(bookMark);
+        const search = bookMark.filter(x => x.id !== id);
+        setBookMark(search);
     }
 
     return (
@@ -56,7 +62,7 @@ const Posts = () => {
                                     key={idx}
                                     className="bg-[#fff] my-2 rounded-lg p-2"
                                 >
-                                    {x}
+                                    {x.title}
                                 </p>
                             ))}
                         </div>

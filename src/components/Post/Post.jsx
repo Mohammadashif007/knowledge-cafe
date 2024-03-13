@@ -2,7 +2,7 @@ import { CiBookmarkCheck } from "react-icons/ci";
 import PropTypes from 'prop-types';
 
 const Post = ({ post, handleMarkRead, handleReadingTime }) => {
-    const { title, cover_image, author, publish_date, reading_time, tags } =
+    const { title, cover_image, author, publish_date, reading_time, tags, id } =
         post;
     return (
         <div className="mb-20 border-2 border-[#000000] p-3 rounded-2xl">
@@ -32,7 +32,7 @@ const Post = ({ post, handleMarkRead, handleReadingTime }) => {
                 ))}
             </div>
             <button
-                onClick={() => handleReadingTime(post.reading_time)}
+                onClick={() => handleReadingTime(post.reading_time, id)}
                 className="border-b-2 border-[#000]"
             >
                 Mark as Read
