@@ -1,8 +1,8 @@
 import { CiBookmarkCheck } from "react-icons/ci";
 
-const Post = ({ post }) => {
-    console.log(post);
-    const { title, cover_image, author, publish_date, reading_time, tags } =
+const Post = ({ post, handleMarkRead }) => {
+
+    const { title, cover_image, author, publish_date, reading_time, tags, id } =
         post;
     return (
         <div className="mb-20 border-2 border-[#000000] p-3 rounded-2xl">
@@ -28,7 +28,7 @@ const Post = ({ post }) => {
                     </div>
                 ))}
             </div>
-            <button className="border-b-2 border-[#000]">Mark as Read</button>
+            <button onClick={() => handleMarkRead(post)} className="border-b-2 border-[#000]">Mark as Read</button>
         </div>
     );
 };
